@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const generateMathQuestion = () => {
-  const num1 = Math.floor(Math.random() * 10) + 1;
-  const num2 = Math.floor(Math.random() * 10) + 1;
+  const num1=Math.floor(Math.random()*10)+1
+  const num2=Math.floor(Math.random()*10)+1
   return {
     question: `${num1} + ${num2}`,
     answer: num1 + num2,
@@ -26,7 +26,7 @@ function App() {
   const [gameact, updgameact] = useState(false);
   const [g, updg] = useState(Array(25).fill(null)); 
   const [score, updScore] = useState(0);
-  const [timerem, updtimerem] = useState(10); 
+  const [timerem, updtimerem] = useState(60); 
   const [tempques, updtempques] = useState(null);
   const [userans, upduserans] = useState('');
   const [timer, updtimer] = useState(null);
@@ -84,7 +84,7 @@ function App() {
 
   const handleStartGame = async() => {
     updgameact(true);
-    updtimerem(10);
+    updtimerem(60);
     updScore(0);
     updg(Array(25).fill(null));
     updtempques(null);
